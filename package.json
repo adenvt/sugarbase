@@ -1,0 +1,12 @@
+{
+  "name": "sugarbase",
+  "version": "0.1.0",
+  "description": "SBAdmin with more sugar.",
+  "main": "dist/app.js",
+  "repository": "https://github.com/adenvt/sugarbase.git",
+  "author": "adenvt <adenvt@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "laravel-mix": "^0.11.4"
+  }
+}
