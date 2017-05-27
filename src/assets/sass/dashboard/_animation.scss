@@ -1,0 +1,34 @@
+@for $i from 1 through 2 {
+    @keyframes glitch-#{$i} {
+        @for $i from 0 through 25 {
+            #{percentage($i*(1/25))} {
+                clip: rect(random(160) * 1px, 260px, random(160) * 1px, 0);
+            }
+        }
+    }
+}
+
+.glitch {
+    position: relative;
+    user-select: none;
+    &::before,
+    &::after {
+        content: attr(glitch-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $gray-darker;
+    }
+    &::before {
+        left: -2px;
+        top: 2px;
+        animation: glitch-1 2s infinite linear alternate-reverse;
+    }
+    &::after {
+        left: 2px;
+        top: -2px;
+        animation: glitch-2 2s infinite linear alternate-reverse;
+    }
+}

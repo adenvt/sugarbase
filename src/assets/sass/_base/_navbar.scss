@@ -1,0 +1,52 @@
+// Navigation
+.navbar-header {
+    @media (min-width: $screen-sm-min) {
+        width: 30%;
+    }
+    @media (min-width: $screen-md-min) {
+        width: 20%;
+    }
+}
+
+.navbar-brand {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding-left: 2em;
+    position: relative;
+    &::before {
+        content: '';
+        width: 1.5em;
+        height: 50px;
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 10px;
+        background: url('../img/logo.svg');
+        background-size: 1.45em 1.45em;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+
+.navbar-inverse {
+    border-bottom: 0;
+    .nav>li {
+        &>a {
+            color: $gray-lighter;
+            &:hover,
+            &:focus,
+            &.focus,
+            &:active,
+            &.active {
+                background-color: $gray-darkest;
+            }
+        }
+    }
+    .nav .open>a {
+        background-color: $gray-darkest;
+    }
+}
+
+.navbar-collapse {
+    border-top: 0;
+}

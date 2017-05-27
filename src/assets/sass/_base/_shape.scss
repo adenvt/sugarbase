@@ -1,0 +1,14 @@
+.square {
+    position: relative;
+    width: 100%;
+    &::after {
+        content: '';
+        display: block;
+        padding-bottom: 100%;
+    }
+}
+
+.circle {
+    @extend .square;
+    border-radius: 50%;
+}

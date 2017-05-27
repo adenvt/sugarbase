@@ -1,0 +1,287 @@
+// Form
+// Checkbox & Radio
+.checkbox,
+.radio {
+    label::before {
+        @extend .fa;
+        font-size: 1.2em;
+        margin-right: 0.5em;
+    }
+    input[disabled],
+    fieldset[disabled] & {
+        label::before {
+            color: #ccc;
+        }
+    }
+}
+
+.checkbox input[type="checkbox"],
+.radio input[type="radio"] {
+    opacity: 0;
+    margin: auto;
+    width: (18em / 14);
+    +label {
+        padding-left: 0;
+        user-select: none;
+    }
+}
+
+.checkbox input[type="checkbox"] {
+    &+label::before {
+        content: $fa-var-square;
+    }
+    &:checked+label::before {
+        color: $brand-primary;
+        content: $fa-var-check-square;
+    }
+}
+
+.radio input[type="radio"] {
+    &+label::before {
+        content: $fa-var-circle;
+    }
+    &:checked+label::before {
+        color: $brand-primary;
+        content: $fa-var-check-circle;
+    }
+}
+
+.error-block {
+    // @extend .help-block;
+    color: $brand-danger;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.28s;
+}
+
+// Input Text
+.form-group {
+    position: relative;
+    >.form-control {
+        padding-top: 1.3em;
+        padding-bottom: 8.82px;
+        height: auto;
+        &.__no-label {
+            padding: ((($font-size-base * 1.3) + 8.8px) / 2) 12px;
+        }
+        +label {
+            position: absolute;
+            width: 100%;
+            top: ($input-height - $line-height-computed + 2px) / 2;
+            padding-left: 13px;
+            opacity: 0.5;
+            pointer-events: none;
+            transition: all 0.1s ease-in-out;
+            &::after {
+                @extend .fa;
+                content: '';
+                position: absolute;
+                font-size: 2em;
+                top: 10px;
+                right: 12px;
+            }
+        }
+        &:focus,
+        &:not(:placeholder-shown) {
+            +label {
+                top: 3px;
+                font-size: 0.75em;
+            }
+        }
+        &[state="valid"],
+        &:valid {
+            &:not(:placeholder-shown) {
+                +label::after {
+                    content: $fa-var-check;
+                    color: $brand-success;
+                }
+            }
+        }
+        &[state="invalid"],
+        &:invalid {
+            &:focus:not(:placeholder-shown) {
+                +label::after {
+                    content: $fa-var-times;
+                    color: $brand-danger;
+                }
+                ~.error-block {
+                    max-height: $line-height-computed * 5;
+                    margin-top: 5px;
+                    margin-bottom: 10px;
+                }
+            }
+            &:not(:focus):not(:placeholder-shown) {
+                background-color: lighten($brand-danger, 30%);
+                +label::after {
+                    content: '';
+                }
+            }
+        }
+        &[state="progress"] {
+            &:not(:placeholder-shown) {
+                +label::after {
+                    @extend .fa-pulse;
+                    content: $fa-var-spinner !important;
+                    color: $gray !important;
+                }
+            }
+        }
+        &[state="warning"] {
+            &:not(:placeholder-shown) {
+                +label::after {
+                    content: $fa-var-warning !important;
+                    color: $brand-warning !important;
+                }
+            }
+        }
+    }
+}
+
+.form-group.input-group {
+    width: 100%;
+    >.form-control+label {
+        display: table-cell;
+        z-index: 99;
+    }
+    .input-group-addon,
+    .input-group-btn {
+        width: 10%;
+        @media (max-width: $screen-xs-max) {
+            width: 20%;
+        }
+    }
+    .input-group-btn .btn {
+        width: 100%;
+        padding: ((($font-size-base * 1.3) + 8.8px) / 2) 12px;
+    }
+}
+
+.form-control[type="number"] {
+    -moz-appearance: textfield;
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    &.__ori {
+        position: absolute;
+        visibility: hidden;
+        width: auto;
+    }
+}
+
+.form-control[type="number"],
+.form-control.currency {
+    +label::after {
+        right: 12px + $btn-spinner-size;
+    }
+}
+
+.form-control[type="date"] {
+    line-height: $line-height-base !important; // Hide Button on Chrome Android
+    -webkit-appearance: none;
+    &::-webkit-inner-spin-button,
+    &::-webkit-calendar-picker-indicator {
+        display: none;
+        -webkit-appearance: none;
+    }
+}
+
+textarea.form-control {
+    resize: vertical;
+    overflow: hidden;
+}
+
+.flatpickr-input[readonly]:not([disabled]) {
+    background: #fff;
+    &:hover {
+        cursor: text;
+    }
+}
+
+.btn-spinner {
+    @extend .btn;
+    @extend .btn-default;
+    @extend .fa;
+    position: absolute;
+    height: 50%;
+    width: $btn-spinner-size;
+    right: 1px;
+    padding: 0;
+    text-align: center;
+    border-right: 0;
+    .input-group & {
+        z-index: 99;
+    }
+}
+
+.btn-up {
+    @extend .fa-angle-up;
+    top: 1px;
+    border-top: 0;
+}
+
+.btn-down {
+    @extend .fa-angle-down;
+    bottom: 1px;
+    border-bottom: 0;
+}
+
+// Select2
+.select2-container--bootstrap .select2-selection {
+    height: auto;
+    padding: ((($font-size-base * 1.3) + 8.8px) / 2) 12px;
+    &.select2-selection--multiple {
+        padding: ((($font-size-base * 1.3) - 3.2px) / 2);
+    }
+    .dataTables_wrapper & {
+        padding: (22px - $font-size-base) / 2 12px;
+    }
+}
+
+.select2-container--bootstrap .select2-selection--multiple .select2-search--inline .select2-search__field {
+    padding: 0 4px;
+}
+
+.select2-hidden-accessible[readonly]+.select2-container {
+    pointer-events: none;
+    touch-action: none;
+    .select2-selection {
+        border-color: $s2bs-input-border;
+        @include box-shadow(none);
+    }
+    .select2-selection,
+    .select2-search__field {
+        cursor: $s2bs-cursor-disabled;
+    }
+    .select2-selection,
+    .select2-selection--multiple .select2-selection__choice {
+        background-color: $s2bs-input-bg-disabled;
+    }
+    .select2-selection__clear,
+    .select2-selection--multiple .select2-selection__choice__remove {
+        display: none;
+    }
+}
+
+.flatpickr-calendar {
+    z-index: 1055;
+}
+
+select.form-control {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+     ::-ms-expand {
+        display: none;
+    }
+}
+
+.text-upper {
+    text-transform: uppercase;
+}
+
+.text-lower {
+    text-transform: lowercase;
+}
