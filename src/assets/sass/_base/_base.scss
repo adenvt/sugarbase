@@ -1,0 +1,15 @@
+@import "./mixins";
+@import "./variables";
+* {
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+    background: rgba($brand-primary, 0.3);
+}
+
+[v-cloak] {
+    display: none;
+}

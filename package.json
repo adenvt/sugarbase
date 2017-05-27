@@ -1,0 +1,50 @@
+{
+  "name": "sugarbase",
+  "version": "0.1.0",
+  "description": "SBAdmin with more sugar.",
+  "main": "dist/app.js",
+  "repository": "https://github.com/adenvt/sugarbase.git",
+  "author": "adenvt <adenvt@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "install": "npm run build",
+    "dev": "cross-env NODE_ENV=development webpack --progress --hide-modules",
+    "watch": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules",
+    "hot": "cross-env NODE_ENV=development webpack-dev-server --inline --hot",
+    "production": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "build": "cross-env NODE_ENV=production gulp",
+    "test": "gulp lint"
+  },
+  "dependencies": {
+    "axios": "^0.16.1",
+    "bootstrap": "^3.3.7",
+    "bootstrap-sass": "^3.3.7",
+    "bootstrap3-dialog": "^1.35.4",
+    "chart.js": "^2.5.0",
+    "datatables.net": "^2.1.1",
+    "datatables.net-bs": "^1.10.15",
+    "datatables.net-responsive": "^2.1.1",
+    "datatables.net-responsive-bs": "^2.1.1",
+    "flatpickr": "^2.6.1",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.2.1",
+    "jquery-deserialize": "^2.0.0-rc1",
+    "jquery-serializejson": "^2.8.1",
+    "lodash": "^4.17.4",
+    "metismenu": "^2.7.0",
+    "mousetrap": "^1.6.1",
+    "mousetrap-global-bind": "^1.1.0",
+    "select2": "^4.0.3",
+    "select2-bootstrap-theme": "^0.1.0-beta.9",
+    "simple-line-icons": "^2.4.1",
+    "vue": "^2.3.3"
+  },
+  "devDependencies": {
+    "cross-env": "^5.0.0",
+    "dotenv": "^4.0.0",
+    "gulp": "^3.9.1",
+    "gulp-jsbeautifier": "^2.1.0",
+    "gulp-nunjucks": "^3.0.0",
+    "laravel-mix": "^0.12.0"
+  }
+}

@@ -1,0 +1,17 @@
+// Login Page
+.center-body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-panel {
+    .panel-title {
+        font-size: 2em;
+        padding-bottom: 0.5em;
+    }
+    .panel-body {
+        padding: 2em;
+    }
+}

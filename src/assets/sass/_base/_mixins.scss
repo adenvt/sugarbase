@@ -1,0 +1,25 @@
+@mixin text-contrast($n) {
+    $color-brightness: round((red($n) * 299) + (green($n) * 587) + (blue($n) * 114) / 1000);
+    $light-color: round((red(#ffffff) * 299) + (green(#ffffff) * 587) + (blue(#ffffff) * 114) / 1000);
+    @if abs($color-brightness) < ($light-color/2) {
+        color: $text-color-inverse;
+    }
+    @else {
+        color: $text-color;
+    }
+}
+
+@mixin color-panel($color) {
+    border-color: $color;
+    &>.panel-heading {
+        color: white;
+        border-color: $color;
+        background-color: $color;
+    }
+    &>a {
+        color: $color;
+        &:hover {
+            color: darken($color, 10%);
+        }
+    }
+}
