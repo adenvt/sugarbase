@@ -1,0 +1,22 @@
+.table-thick>tbody>tr>td {
+    padding: 10px 15px;
+    vertical-align: middle;
+}
+
+.table-thin>tbody>tr>td {
+    padding: 2px 8px;
+    vertical-align: middle;
+}
+
+.table-object {
+    .key {
+        width: 1%;
+        white-space: nowrap;
+        background-color: $gray-lighter;
+    }
+    .btn.pull-right {
+        @media (max-width: $screen-xs-max) {
+            width: 100%;
+        }
+    }
+}

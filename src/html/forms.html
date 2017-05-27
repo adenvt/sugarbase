@@ -1,0 +1,217 @@
+<?php extends "./_base/layout.html" ?>
+<?php block content ?>
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Forms</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">Basic Form Elements</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <form role="form">
+                            <div class="form-group">
+                                <input id="normal" class="form-control" placeholder=" " />
+                                <label for="normal">Text Input</label>
+                            </div>
+                            <div class="form-group">
+                                <input id="normal-with-help" class="form-control" placeholder=" " />
+                                <label for="normal-with-help">Text Input with Help Text</label>
+                                <p class="help-block">Example block-level help text here.</p>
+                            </div>
+                            <div class="form-group">
+                                <input id="invalid-input" class="form-control" placeholder=" " />
+                                <label for="invalid-input">Text Input with Progress and Error Message</label>
+                                <p class="error-block">
+                                    This is Error Message
+                                    <br>It will automatically show when validation invalid
+                                    <br>Or force with attribute state="invalid"
+                                </p>
+                            </div>
+                            <div class="form-group">
+                                <input id="number-input" class="form-control" placeholder=" " type="number" />
+                                <label for="number-input">Number Input</label>
+                            </div>
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">Rp.</span>
+                                <input id="currency-input" class="form-control currency" placeholder=" " type="number" step="100" />
+                                <label for="currency-input">Currency Input</label>
+                            </div>
+                            <div class="form-group">
+                                <input id="ipv4" class="form-control" placeholder=" " type="text" pattern="(((^|\.)((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]?\d))){4}$)" />
+                                <label for="ipv4">IPv4 Input</label>
+                            </div>
+                            <div class="form-group">
+                                <input id="form2" class="form-control date" placeholder=" " />
+                                <label for="form2">Date Input</label>
+                            </div>
+                            <div class="form-group">
+                                <label>Static Control</label>
+                                <p class="form-control-static">email@example.com</p>
+                            </div>
+                            <div class="form-group">
+                                <label>File input</label>
+                                <input type="file" />
+                            </div>
+                            <div class="form-group">
+                                <label>Text area</label>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Checkboxes</label>
+                                <div class="checkbox">
+                                    <input id="checkbox_1" type="checkbox" value="" />
+                                    <label for="checkbox_1">Checkbox 1</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input id="checkbox_2" type="checkbox" value="" />
+                                    <label for="checkbox_2">Checkbox 2</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input id="checkbox_3" type="checkbox" value="" />
+                                    <label for="checkbox_3">Checkbox 3</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Radio Buttons</label>
+                                <div class="radio">
+                                    <input id="radio_1" type="radio" name="optionsRadios" value="option1" checked/>
+                                    <label for="radio_1">Radio 1</label>
+                                </div>
+                                <div class="radio">
+                                    <input id="radio_2" type="radio" name="optionsRadios" value="option2" checked/>
+                                    <label for="radio_2">Radio 2</label>
+                                </div>
+                                <div class="radio">
+                                    <input id="radio_3" type="radio" name="optionsRadios" value="option3" checked/>
+                                    <label for="radio_3">Radio 3</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Selects</label>
+                                <select class="form-control select" data-placeholder="Select One Number">
+                                    <option value="">Placeholder</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Multiple Selects</label>
+                                <select multiple class="form-control select" data-placeholder="Select One or More Numbers">
+                                    <option value="">Placeholder</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-default">Submit Button</button>
+                            <button type="reset" class="btn btn-default">Reset Button</button>
+                        </form>
+                    </div>
+                    <!-- /.col-lg-6 (nested) -->
+                    <div class="col-lg-6">
+                        <h1>Disabled Form States</h1>
+                        <form role="form">
+                            <fieldset disabled>
+                                <div class="form-group">
+                                    <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input" value="Data" disabled/>
+                                    <label for="disabledSelect">Disabled input</label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="disabledSelect">Disabled select menu</label>
+                                    <select id="disabledSelect" class="form-control select" disabled>
+                                        <option>Disabled select</option>
+                                    </select>
+                                </div>
+                                <div class="checkbox">
+                                    <input id="disabledCheckbox" type="checkbox" />
+                                    <label for="disabledCheckbox">Disabled Checkbox</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Disabled Button</button>
+                            </fieldset>
+                        </form>
+                        <h1>Form Validation States</h1>
+                        <form role="form">
+                            <div class="form-group has-success">
+                                <label class="control-label" for="inputSuccess">Input with success</label>
+                                <input type="text" class="form-control __no-label" id="inputSuccess" />
+                            </div>
+                            <div class="form-group has-warning">
+                                <label class="control-label" for="inputWarning">Input with warning</label>
+                                <input type="text" class="form-control __no-label" id="inputWarning" />
+                            </div>
+                            <div class="form-group has-error">
+                                <label class="control-label" for="inputError">Input with error</label>
+                                <input type="text" class="form-control __no-label" id="inputError" />
+                            </div>
+                        </form>
+                        <h1>Input Groups</h1>
+                        <form role="form">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">@</span>
+                                <input type="text" class="form-control" placeholder=" " />
+                                <label>Username</label>
+                            </div>
+                            <div class="form-group input-group">
+                                <input type="text" class="form-control" placeholder=" " />
+                                <label>Label</label>
+                                <span class="input-group-addon">.00</span>
+                            </div>
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-eur"></i>
+                                </span>
+                                <input type="text" class="form-control" placeholder=" " />
+                                <label>Font Awesome Icon</label>
+                            </div>
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">$</span>
+                                <input type="text" class="form-control" placeholder=" " />
+                                <label>Price</label>
+                                <span class="input-group-addon">.00</span>
+                            </div>
+                            <div class="form-group input-group">
+                                <input type="text" class="form-control" placeholder=" " />
+                                <label>Search</label>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /.col-lg-6 (nested) -->
+                </div>
+                <!-- /.row (nested) -->
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+<?php endblock ?>
+<?php block js ?> {{ super() }}
+<script type="text/javascript">
+    var setInvalid = _.debounce(() => {
+        $('#invalid-input').attr('state', 'invalid');
+    }, 1500);
+
+    $('#invalid-input').on('input', () => {
+        $('#invalid-input').attr('state', 'progress');
+        setInvalid();
+    });
+</script>
+<?php endblock ?>
